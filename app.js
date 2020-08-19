@@ -7,9 +7,9 @@ searchBtn.addEventListener("click",function(){
     const searchTerm = document.getElementById("searchTerm").value;
     let url = `https://api.lyrics.ovh/suggest/${searchTerm}`;
 
-     console.log(searchTerm);
+    //  console.log(searchTerm);
 
-     // here i tried a lot to set searchTerm variable but that didn't work, don't know why, but this worked . 
+    
     fetch(url)
     .then((response) => response.json())
     .then((results) => {
@@ -27,7 +27,7 @@ searchBtn.addEventListener("click",function(){
                         <p class="author lead">Album by <span>${results.data[i].artist.name}</span></p>
                     </div>
                     <div class="col-md-3 text-md-right text-center">
-                        <button class="btn btn-success" onclick = "lyricsFull(${results.data[i]})">Get Lyrics</button>
+                        <button class="btn btn-success" >Get Lyrics</button>
                     </div>
                 </div> `;
                     lyricsDiv.appendChild(div);
@@ -38,7 +38,7 @@ searchBtn.addEventListener("click",function(){
                         fetch(url)
                         .then((response)=>response.json())
                         .then(res => {
-                            // const songTitle = getElementById("songTitle"); 
+                            // const songTitle = getElementById("songTitle1"); 
                             // songTitle.innerText = results.data[i].title;
                             // const lyricsBody = getElementById("lyricsBody");
                             // lyricsBody.innerText = res.data[i].link;
